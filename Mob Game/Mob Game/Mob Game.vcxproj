@@ -72,15 +72,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);$(ProjectDir)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -151,9 +155,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="TopDownEngine\Color.h" />
+    <ClInclude Include="TopDownEngine\Borders.h" />
+    <ClInclude Include="TopDownEngine\Mob.h" />
+    <ClInclude Include="TopDownEngine\Game.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="TopDownEngine\Controller.h" />
+    <ClInclude Include="TopDownEngine\GameObject.h" />
+    <ClInclude Include="TopDownEngine\Key.h" />
+    <ClInclude Include="TopDownEngine\Player.h" />
+    <ClInclude Include="TopDownEngine\Utility.h" />
+    <ClInclude Include="TopDownEngine\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="TopDownEngine\Color.cpp" />
+    <ClCompile Include="TopDownEngine\Borders.cpp" />
+    <ClCompile Include="TopDownEngine\Mob.cpp" />
+    <ClCompile Include="TopDownEngine\Game.cpp" />
     <ClCompile Include="Mob Game.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -161,6 +179,12 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TopDownEngine\Controller.cpp" />
+    <ClCompile Include="TopDownEngine\GameObject.cpp" />
+    <ClCompile Include="TopDownEngine\Key.cpp" />
+    <ClCompile Include="TopDownEngine\Player.cpp" />
+    <ClCompile Include="TopDownEngine\Utility.cpp" />
+    <ClCompile Include="TopDownEngine\Vector2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
