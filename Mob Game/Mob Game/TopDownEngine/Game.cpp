@@ -26,7 +26,6 @@ void Game::run(int delayMs)
 	while (true)
 	{
 		displayCoinsText(Vector2::zero);
-		displayShopText(Vector2(14, 0));
 
 		if (countMs >= mobSpawnDelayMs)
 		{
@@ -79,18 +78,24 @@ void Game::killMob(std::vector<Mob>::iterator mob)
 
 void Game::displayCoinsText(Vector2 pos)
 {
-	gotoPos(pos);
-	std::cout << std::string(borders.right, ' ');
-	gotoPos(pos);
-	std::cout << "Coins: " << coins;
+	std::string tempText = "Coins: " + std::to_string(coins);
+	if (tempText != coinsText)
+	{
+		coinsText = tempText;
+		gotoPos(pos);
+		std::cout << std::string(10, ' ');
+		gotoPos(pos);
+		std::cout << coinsText;
+	}
 }
 
 void Game::displayShopText(Vector2 pos)
 {
+	std::string shopText = "[Space] +1 speed (" + std::to_string(speedUpgradeCost) + " coins)";
 	gotoPos(pos);
 	std::cout << std::string(borders.right, ' ');
 	gotoPos(pos);
-	std::cout << "[Space] +1 speed (" << speedUpgradeCost << " coins)";
+	std::cout << shopText;
 }
 
 void Game::buySpeedUpgrade()

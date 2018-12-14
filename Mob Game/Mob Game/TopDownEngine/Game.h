@@ -15,6 +15,9 @@ private:
 
 	int coins;
 	int speedUpgradeCost = 5;
+
+	std::string coinsText;
+	std::string shopText;
 public:
 	Game(Borders borders, Player *player, Mob *mob, int maxMobs);
 
